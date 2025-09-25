@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from itertools import cycle
 from src.unlearning.compute_parameters import calculate_parameters
-from src.training.training_base import choose_device
+from src.utils.utils import choose_device
 from src.utils.calculate_accuracy import evaluate
 from src.utils.utils import save_accuracy_history, save_model
 from src.training.training_unlearning import clip_gradients_l2
@@ -83,7 +83,7 @@ def train_block_unlearning_model(
     modelname,
     log_every=500,
     max_T=5000,
-    model_type=LinearNet,
+    model_type=None,
     save_model_weights=True,
     blocks_mode="qr",
     blocks_split_type="equal",

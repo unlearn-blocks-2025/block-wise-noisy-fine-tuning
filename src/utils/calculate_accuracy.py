@@ -5,7 +5,7 @@ import time
 from typing import Dict, Optional
 import torch
 from torch.utils.data import DataLoader
-from src.training.training_base import choose_device
+from src.utils.utils import choose_device
 
 
 def evaluate(model, dataloader, device="cpu"):

@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from itertools import cycle
 from src.unlearning.compute_parameters import calculate_parameters
-from src.training.training_base import choose_device
+from src.utils.utils import choose_device
 from src.utils.calculate_accuracy import evaluate
 from src.utils.utils import save_accuracy_history, save_model
 
@@ -97,7 +97,7 @@ def train_base_unlearning_model(
     log_every=500,
     max_T=5000,
     save_model_weights=True,
-    model_class=LinearNet,
+    model_class=None,
 ):
 
     config = calculate_parameters(config_path)

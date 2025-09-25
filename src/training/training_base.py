@@ -2,22 +2,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
-from src.models.tinymodel import LinearNet
+from src.models.get_model import LinearNet
 from src.utils.calculate_accuracy import evaluate
 from src.utils.utils import save_accuracy_history, save_model
 import time
-
-
-def choose_device():
-    if torch.cuda.is_available():
-        device = "cuda"
-    elif torch.backends.mps.is_available():
-        device = "mps"
-    else:
-        device = "cpu"
-
-    print(f"device {device} will be used")
-    return device
+from src.utils.utils import choose_device
 
 
 # can be used for fully trained model and for retrain
